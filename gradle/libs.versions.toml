@@ -4,22 +4,24 @@ coroutines = "1.10.2"
 jvmTarget = "21"
 kotest = "5.9.1"
 kotlin = "2.1.20"
-mockk = "1.14.0"
+kotlinLoggingJvm = "7.0.3"
+slf4j = "2.0.17"
 spotless = "7.0.3"
 
 [libraries]
 
 # Kotlin & Coroutines
 kotlin_core = { module = "org.jetbrains.kotlin:kotlin-stdlib" }
+kotlin_logging_jvm = { module = "io.github.oshai:kotlin-logging-jvm", version.ref = "kotlinLoggingJvm" }
 kotlinx_coroutines_core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
-kotlinx_coroutines_reactor = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-reactor", version.ref = "coroutines" }
 
+# Logging
+slf4j_sample = { module = "org.slf4j:slf4j-simple", version.ref = "slf4j" }
 
 # Testing
 kotest_assertions = { module = "io.kotest:kotest-assertions-core", version.ref = "kotest" }
 kotest_core = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
 kotlinx_coroutines_test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
-mockk_core = { module = "io.mockk:mockk", version.ref = "mockk" }
 
 [plugins]
 
@@ -31,12 +33,11 @@ spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
 kotlin_all = [
     "kotlin_core",
     "kotlinx_coroutines_core",
-    "kotlinx_coroutines_reactor",
+    "kotlin_logging_jvm",
 ]
 
 test_all = [
     "kotest_assertions",
     "kotest_core",
     "kotlinx_coroutines_test",
-    "mockk_core",
 ]

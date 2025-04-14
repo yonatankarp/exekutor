@@ -6,6 +6,9 @@ plugins {
 dependencies {
     implementation(project(":exekutor-core"))
     implementation(libs.bundles.kotlin.all)
+
+    runtimeOnly(libs.slf4j.sample)
+
     testImplementation(libs.bundles.test.all)
 }
 
