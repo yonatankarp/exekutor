@@ -1,11 +1,11 @@
 package com.yonatankarp.exekutor.sample
 
 import com.yonatankarp.exekutor.core.Outcome
-import com.yonatankarp.exekutor.core.Step
 import com.yonatankarp.exekutor.core.StepResult
+import com.yonatankarp.exekutor.core.steps.AutoRegisteredStep
 import io.github.oshai.kotlinlogging.KotlinLogging
 
-class CreditCheck : Step<RiskContext> {
+class CreditCheck : AutoRegisteredStep<RiskContext>() {
     override val name = "CreditCheck"
 
     override suspend fun execute(context: RiskContext): StepResult {

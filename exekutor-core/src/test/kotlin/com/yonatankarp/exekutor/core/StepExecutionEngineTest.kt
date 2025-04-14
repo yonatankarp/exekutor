@@ -1,5 +1,6 @@
 package com.yonatankarp.exekutor.core
 
+import com.yonatankarp.exekutor.core.steps.Step
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.test.runTest
 import org.junit.jupiter.api.Assertions.assertEquals
