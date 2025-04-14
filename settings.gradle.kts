@@ -1,4 +1,6 @@
-rootProject.name = "spring-starter"
+rootProject.name = "exekutor"
+
 include(
-    "spring-starter"
+    "exekutor-core",
+    "exekutor-sample"
 )

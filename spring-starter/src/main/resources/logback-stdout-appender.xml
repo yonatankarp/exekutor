@@ -1,9 +1,0 @@
-<included>
-    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-        <encoder>
-            <pattern>
-                <![CDATA[%date{HH:mm:ss.SSS} [%thread] %-5level %logger{15} %X{req.requestURI} traceId: %X{trace_id} spanId: %X{span_id} %msg %replace(%rEx){'\n','\\n'}%nopex\n]]>
-            </pattern>
-        </encoder>
-    </appender>
-</included>
