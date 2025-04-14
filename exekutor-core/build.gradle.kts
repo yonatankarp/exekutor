@@ -18,16 +18,19 @@ dependencies {
 }
 
 tasks {
-    jar {
-        enabled = false
-    }
-
     build {
         finalizedBy(spotlessApply)
     }
 
     test {
         useJUnitPlatform()
-        finalizedBy(spotlessApply)
     }
+}
+
+val tasksDependencies = mapOf(
+    "spotlessKotlin" to listOf("compileKotlin", "compileTestKotlin", "test")
+)
+
+tasksDependencies.forEach { (taskName, dependencies) ->
+    tasks.findByName(taskName)?.dependsOn(dependencies)
 }

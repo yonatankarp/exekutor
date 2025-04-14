@@ -2,6 +2,7 @@
 
 coroutines = "1.10.2"
 jvmTarget = "21"
+kotest = "5.9.1"
 kotlin = "2.1.20"
 mockk = "1.14.0"
 spotless = "7.0.3"
@@ -12,9 +13,12 @@ spotless = "7.0.3"
 kotlin_core = { module = "org.jetbrains.kotlin:kotlin-stdlib" }
 kotlinx_coroutines_core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
 kotlinx_coroutines_reactor = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-reactor", version.ref = "coroutines" }
-kotlinx_coroutines_test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
+
 
 # Testing
+kotest_assertions = { module = "io.kotest:kotest-assertions-core", version.ref = "kotest" }
+kotest_core = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
+kotlinx_coroutines_test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
 mockk_core = { module = "io.mockk:mockk", version.ref = "mockk" }
 
 [plugins]
@@ -31,6 +35,8 @@ kotlin_all = [
 ]
 
 test_all = [
+    "kotest_assertions",
+    "kotest_core",
     "kotlinx_coroutines_test",
     "mockk_core",
 ]
