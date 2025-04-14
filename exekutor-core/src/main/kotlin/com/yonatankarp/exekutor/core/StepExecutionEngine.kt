@@ -26,10 +26,12 @@ class StepExecutionEngine<C : ExecutionContext>(
         return ExecutionDecision.Success
     }
 
-    private fun shouldFailDueToTime(context: C ): Boolean =
-        context.remainingTime() <= timeBufferMs
+    private fun shouldFailDueToTime(context: C): Boolean = context.remainingTime() <= timeBufferMs
 
-    private suspend fun runStepSafely(step: Step<C>, context: C): StepResult =
+    private suspend fun runStepSafely(
+        step: Step<C>,
+        context: C,
+    ): StepResult =
         try {
             withTimeout(context.remainingTime()) {
                 step.execute(context)
@@ -40,7 +42,10 @@ class StepExecutionEngine<C : ExecutionContext>(
             StepResult(Outcome.FAIL, "Step ${step.name} threw exception: ${e.message}")
         }
 
-    private fun resolveDecision(step: Step<C>, result: StepResult): ExecutionDecision? =
+    private fun resolveDecision(
+        step: Step<C>,
+        result: StepResult,
+    ): ExecutionDecision? =
         when (result.outcome) {
             Outcome.PASS -> null
             Outcome.FAIL -> ExecutionDecision.Fail("Step ${step.name} failed")

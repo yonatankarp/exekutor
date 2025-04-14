@@ -14,3 +14,7 @@ internal object StepRegistry {
 
     fun all(): List<Step<out ExecutionContext>> = steps.toList()
 }
+
+fun registerSteps(block: StepRegistryDsl.() -> Unit) {
+    StepRegistryDsl().apply(block)
+}
