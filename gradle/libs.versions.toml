@@ -1,0 +1,88 @@
+[versions]
+
+coroutines = "1.10.2"
+jooqDockerPlugin = "0.3.12"
+jvmTarget = "21"
+kotlin = "2.1.20"
+mockk = "1.14.0"
+mockkSpring = "4.0.2"
+postgres = "42.7.4"
+spotless = "7.0.3"
+springDependencyManagement = "1.1.7"
+springboot = "3.4.4"
+springdoc = "2.8.6"
+swagger = "7.12.0"
+testcontainers = "1.20.6"
+
+[libraries]
+
+# Kotlin & Coroutines
+kotlin_core = { module = "org.jetbrains.kotlin:kotlin-stdlib" }
+kotlin_jackson_module = { module = "com.fasterxml.jackson.module:jackson-module-kotlin" }
+kotlin_reflection = { module = "org.jetbrains.kotlin:kotlin-reflect" }
+kotlinx_coroutines_core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+kotlinx_coroutines_reactor = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-reactor", version.ref = "coroutines" }
+kotlinx_coroutines_test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
+
+# Spring Boot
+springboot_actuator_starter = { module = "org.springframework.boot:spring-boot-starter-actuator" }
+springboot_jdbc_starter = { module = "org.springframework.boot:spring-boot-starter-jdbc" }
+springboot_jooq_starter = { module = "org.springframework.boot:spring-boot-starter-jooq" }
+springboot_test_starter = { module = "org.springframework.boot:spring-boot-starter-test" }
+springboot_validation_starter = { module = "org.springframework.boot:spring-boot-starter-validation" }
+springboot_web_starter = { module = "org.springframework.boot:spring-boot-starter-webflux" }
+springdoc_openapi_starter = { module = "org.springdoc:springdoc-openapi-starter-webmvc-ui", version.ref = "springdoc" }
+
+# Persistence
+flyway_postgres = { module = "org.flywaydb:flyway-database-postgresql" }
+hikaricp_core = { module = "com.zaxxer:HikariCP" }
+postgresql = { module = "org.postgresql:postgresql", version.ref = "postgres" }
+
+# Testing
+mockk_core = { module = "io.mockk:mockk", version.ref = "mockk" }
+mockk_spring = { module = "com.ninja-squad:springmockk", version.ref = "mockkSpring" }
+testcontainers_bom = { module = "org.testcontainers:testcontainers-bom", version.ref = "testcontainers" }
+testcontainers_jupiter = { module = "org.testcontainers:junit-jupiter" }
+testcontainers_postgres = { module = "org.testcontainers:postgresql" }
+
+[plugins]
+
+jooq = { id = "com.revolut.jooq-docker", version.ref = "jooqDockerPlugin" }
+kotlin_jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin_spring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin" }
+openapi_generator = { id = "org.openapi.generator", version.ref = "swagger" }
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
+springboot = { id = "org.springframework.boot", version.ref = "springboot" }
+springboot_dependency_management = { id = "io.spring.dependency-management", version.ref = "springDependencyManagement" }
+
+[bundles]
+
+kotlin_all = [
+    "kotlin_core",
+    "kotlin_jackson_module",
+    "kotlin_reflection",
+    "kotlinx_coroutines_core",
+    "kotlinx_coroutines_reactor",
+]
+
+springboot_all = [
+    "springboot_actuator_starter",
+    "springboot_jdbc_starter",
+    "springboot_jooq_starter",
+    "springboot_validation_starter",
+    "springboot_web_starter",
+]
+
+persistence_support_all = [
+    "flyway_postgres",
+    "hikaricp_core",
+]
+
+test_all = [
+    "kotlinx_coroutines_test",
+    "mockk_core",
+    "mockk_spring",
+    "springboot_test_starter",
+    "testcontainers_jupiter",
+    "testcontainers_postgres",
+]

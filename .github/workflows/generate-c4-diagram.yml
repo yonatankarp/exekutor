@@ -1,0 +1,36 @@
+name: Generate Docs
+
+on:
+  push:
+    paths:
+      - 'docs/c4/**.dsl'
+    branches-ignore:
+      - main
+
+jobs:
+  Generate-C4-Diagrams:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+        with:
+          token: ${{ secrets.REVIEWER_GITHUB_TOKEN }}
+
+      - name: Remove old diagrams
+        run: |
+          git rm -f docs/c4/*.png
+
+      - name: Generate diagrams
+        uses: university-of-york/generate-c4-model-action@1.0.0
+        with:
+          source-path: docs/c4/architecture.dsl
+          target-path: docs/c4
+
+      - name: Push to branch if diagrams changed
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add docs/c4/*.png
+          git commit -m "C4 diagrams generated" || exit 0
+          git push

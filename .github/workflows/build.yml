@@ -1,0 +1,31 @@
+name: Continuous Integration
+
+on:
+  pull_request:
+    types: [ opened, synchronize, reopened, ready_for_review ]
+  pull_request_target:
+    types: [ opened, synchronize, reopened, ready_for_review ]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.job }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pipeline:
+    strategy:
+      fail-fast: false
+      matrix:
+        service: [ spring-starter ]
+    uses: yonatankarp/github-actions/.github/workflows/ci.yml@v1
+    with:
+      app_name: ${{ matrix.service }}
+
+  dependabot_auto_merge:
+    needs: pipeline
+    if: ${{ github.event_name == 'pull_request_target' && github.actor == 'dependabot[bot]' }}
+    uses: yonatankarp/github-actions/.github/workflows/dependabot-auto-merge.yml@v1
+    secrets:
+      GITHUB_PAT: ${{ secrets.REVIEWER_GITHUB_TOKEN }}
+
+  linters:
+    uses: yonatankarp/github-actions/.github/workflows/linters.yml@v1

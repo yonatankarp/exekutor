@@ -1,0 +1,29 @@
+import static org.gradle.api.file.DuplicatesStrategy.INCLUDE
+
+plugins {
+    id('java')
+    id('java-library')
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(libs.versions.jvmTarget.get()))
+    }
+}
+
+tasks.jar {
+    archiveFileName = "${project.name}-${project.version}.jar"
+    manifest {
+        attributes(
+                'Implementation-Title':     project.name,
+                'Implementation-Version':   project.version)
+    }
+    from {
+        configurations.runtimeClasspath
+                .filter { it.exists() }
+                .collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    exclude("META-INF/*.SF", "META-INF/*.DSA", "META-INF/*.RSA", "META-INF/LICENSE.txt")
+    includeEmptyDirs(false)
+    duplicatesStrategy(INCLUDE)
+}

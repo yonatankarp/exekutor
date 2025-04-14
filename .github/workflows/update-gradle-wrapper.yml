@@ -1,0 +1,12 @@
+name: Update Gradle Wrapper
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  update-gradle-wrapper:
+    uses:  yonatankarp/github-actions/.github/workflows/update-gradle-wrapper.yml@v1
+    secrets:
+      GITHUB_PAT: ${{ secrets.REVIEWER_GITHUB_TOKEN }}
