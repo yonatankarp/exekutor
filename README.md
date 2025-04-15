@@ -1,27 +1,66 @@
-# 🧩 exekutor 
+# 🧠 Exekutor
 
-**A Kotlin-first, pluggable execution pipeline engine with time budgeting and early exit logic.**
+A lightweight, pluggable Kotlin engine for executing complex, interruptible
+workflows — built with time budgets, fail-fast execution, and simple
+extensibility in mind.
 
-`exekutor` lets you compose and run a sequence of execution steps, each capable of failing fast, triggering friction (like MFA or additional checks), or continuing onward — all within a shared time budget.
-
-Built with real-world systems in mind: fraud checks, credit scoring, compliance gating, dynamic pipelines, or anything requiring time-aware orchestration.
-
----
-
-## 🚀 Features
-
-- ⏱ **Time Budgeting** — each step gets a dynamic slice of remaining time
-- 🛑 **Early Exit** — fail or pause execution on the first blocking condition
-- 🧩 **Pluggable Design** — define your own steps, outcomes, and context
-- 💬 **Friction Support** — support "soft fail" use cases (e.g., identity verification required)
-- ✅ **Suspending Steps** — supports asynchronous/non-blocking execution using `suspend`
+Ideal for:
+- ✅ Fraud and credit risk flows
+- ✅ Decision trees and scoring logic
+- ✅ Compliance checks
+- ✅ Any pipeline-style orchestration
 
 ---
 
-## 🧠 When to use `exekutor`
+## ✨ Features
 
-- Decision engines (fraud, credit, KYC, etc.)
-- Dynamic business rule orchestration
-- Multi-step validation flows
-- Feature flag-based runtime logic
-- Serverless workflows with strict execution time limits
+- 🔌 Modular step architecture
+- ⏱️ Time-aware execution context
+- ❌ Fail-fast on errors or timeouts
+- ⚠️ Friction detection support (e.g. challenge required)
+- 🧩 Built-in DSL for step registration
+- 📚 Auto-generated documentation with Dokka
+- 🧪 Fully testable core
+
+---
+
+## 🚀 Getting Started
+
+```kotlin
+class FraudCheck : Step<RiskContext> {
+    override val name = "FraudCheck"
+    override suspend fun execute(context: RiskContext): StepResult =
+        if (context.payload.contains("fraud")) StepResult(Outcome.FAIL)
+        else StepResult(Outcome.PASS)
+}
+
+registerSteps {
+    step { FraudCheck() }
+    step { CreditCheck() }
+}
+
+val engine = StepExecutionEngine(planBuilder = defaultPlanBuilder())
+val result = engine.run(RiskContext("user", 3000))
+```
+
+---
+
+## 📚 Documentation
+
+API docs (latest version) are available at:
+
+👉 https://yonatankarp.github.io/exekutor
+
+---
+
+## 🛠 Tech Stack
+
+- Kotlin 2.x
+- JDK 21
+- Gradle Kotlin DSL
+- Dokka for documentation
+
+---
+
+## 📄 License
+MIT © Yonatan Karp-Rudin

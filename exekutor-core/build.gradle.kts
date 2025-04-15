@@ -1,4 +1,7 @@
 plugins {
+    java
+    `maven-publish`
+    id("exekutor.publishing-conventions")
     id("exekutor.code-metrics")
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.dokka)
