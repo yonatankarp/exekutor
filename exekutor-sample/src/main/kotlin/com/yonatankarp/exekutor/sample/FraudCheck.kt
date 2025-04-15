@@ -1,8 +1,8 @@
 package com.yonatankarp.exekutor.sample
 
-import com.yonatankarp.exekutor.core.Outcome
-import com.yonatankarp.exekutor.core.StepResult
-import com.yonatankarp.exekutor.core.steps.AutoRegisteredStep
+import com.yonatankarp.exekutor.core.api.Outcome
+import com.yonatankarp.exekutor.core.api.StepResult
+import com.yonatankarp.exekutor.core.base.AutoRegisteredStep
 import io.github.oshai.kotlinlogging.KotlinLogging
 
 class FraudCheck : AutoRegisteredStep<RiskContext>() {

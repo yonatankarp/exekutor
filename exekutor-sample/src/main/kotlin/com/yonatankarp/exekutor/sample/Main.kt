@@ -1,9 +1,9 @@
 package com.yonatankarp.exekutor.sample
 
-import com.yonatankarp.exekutor.core.ExecutionDecision
-import com.yonatankarp.exekutor.core.StepExecutionEngine
-import com.yonatankarp.exekutor.core.steps.defaultPlanBuilder
-import com.yonatankarp.exekutor.core.steps.registerSteps
+import com.yonatankarp.exekutor.core.api.ExecutionDecision
+import com.yonatankarp.exekutor.core.engine.StepExecutionEngine
+import com.yonatankarp.exekutor.core.registry.defaultPlanBuilder
+import com.yonatankarp.exekutor.core.registry.registerSteps
 import io.github.oshai.kotlinlogging.KotlinLogging
 import kotlinx.coroutines.runBlocking
 
