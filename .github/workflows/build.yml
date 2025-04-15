@@ -15,7 +15,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        service: [ exekutor ]
+        service: [ exekutor-core, exekutor-sample ]
     uses: yonatankarp/github-actions/.github/workflows/ci.yml@v1
     with:
       app_name: ${{ matrix.service }}
