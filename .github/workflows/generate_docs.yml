@@ -28,7 +28,7 @@ jobs:
           java-version: 21
 
       - name: Generate Dokka docs
-        run: ./gradlew :exekutor-core:dokkaHtml
+        run: ./gradlew :exekutor-core:dokkaGenerate
 
       - name: Copy docs to top-level folder
         run: |

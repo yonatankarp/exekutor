@@ -1,3 +1,5 @@
+import org.jetbrains.dokka.gradle.DokkaTask
+
 plugins {
     java
     `maven-publish`
@@ -39,10 +41,10 @@ tasksDependencies.forEach { (taskName, dependencies) ->
     tasks.findByName(taskName)?.dependsOn(dependencies)
 }
 
-tasks.dokkaHtml {
-    outputDirectory.set(layout.buildDirectory.get().asFile.resolve("dokka"))
+tasks.withType<DokkaTask> {
+    outputDirectory = layout.buildDirectory.get().asFile.resolve("dokka")
     dokkaSourceSets.configureEach {
-        reportUndocumented.set(true)
-        skipDeprecated.set(true)
+        reportUndocumented = true
+        skipDeprecated = true
     }
 }
