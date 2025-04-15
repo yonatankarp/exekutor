@@ -1,4 +1,4 @@
-package com.yonatankarp.exekutor.core
+package com.yonatankarp.exekutor.core.api
 
 sealed class ExecutionDecision {
     data object Success : ExecutionDecision()

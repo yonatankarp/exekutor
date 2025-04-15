@@ -1,7 +1,7 @@
 package com.yonatankarp.exekutor.sample
 
-import com.yonatankarp.exekutor.core.ExecutionContext
-import com.yonatankarp.exekutor.core.StepResult
+import com.yonatankarp.exekutor.core.api.ExecutionContext
+import com.yonatankarp.exekutor.core.api.StepResult
 
 class RiskContext(
     val payload: String,

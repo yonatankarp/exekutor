@@ -1,6 +1,7 @@
-package com.yonatankarp.exekutor.core.steps
+package com.yonatankarp.exekutor.core.registry
 
-import com.yonatankarp.exekutor.core.ExecutionContext
+import com.yonatankarp.exekutor.core.api.ExecutionContext
+import com.yonatankarp.exekutor.core.api.Step
 import io.github.oshai.kotlinlogging.KotlinLogging
 
 internal object StepRegistry {

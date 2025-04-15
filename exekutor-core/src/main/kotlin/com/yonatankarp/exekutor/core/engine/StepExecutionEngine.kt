@@ -1,6 +1,10 @@
-package com.yonatankarp.exekutor.core
+package com.yonatankarp.exekutor.core.engine
 
-import com.yonatankarp.exekutor.core.steps.Step
+import com.yonatankarp.exekutor.core.api.ExecutionContext
+import com.yonatankarp.exekutor.core.api.ExecutionDecision
+import com.yonatankarp.exekutor.core.api.Outcome
+import com.yonatankarp.exekutor.core.api.Step
+import com.yonatankarp.exekutor.core.api.StepResult
 import kotlinx.coroutines.TimeoutCancellationException
 import kotlinx.coroutines.withTimeout
 
@@ -50,6 +54,9 @@ class StepExecutionEngine<C : ExecutionContext>(
             Outcome.PASS -> null
             Outcome.FAIL -> ExecutionDecision.Fail("Step ${step.name} failed")
             Outcome.FRICTION_REQUIRED ->
-                ExecutionDecision.Friction("Step ${step.name} requires friction", result.details)
+                ExecutionDecision.Friction(
+                    "Step ${step.name} requires friction",
+                    result.details,
+                )
         }
 }

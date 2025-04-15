@@ -1,6 +1,11 @@
 package com.yonatankarp.exekutor.core
 
-import com.yonatankarp.exekutor.core.steps.Step
+import com.yonatankarp.exekutor.core.api.ExecutionContext
+import com.yonatankarp.exekutor.core.api.ExecutionDecision
+import com.yonatankarp.exekutor.core.api.Outcome
+import com.yonatankarp.exekutor.core.api.Step
+import com.yonatankarp.exekutor.core.api.StepResult
+import com.yonatankarp.exekutor.core.engine.StepExecutionEngine
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.test.runTest
 import org.junit.jupiter.api.Assertions.assertEquals
