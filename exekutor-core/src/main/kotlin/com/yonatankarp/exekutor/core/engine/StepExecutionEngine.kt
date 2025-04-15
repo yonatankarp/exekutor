@@ -8,10 +8,28 @@ import com.yonatankarp.exekutor.core.api.StepResult
 import kotlinx.coroutines.TimeoutCancellationException
 import kotlinx.coroutines.withTimeout
 
+/**
+ * Orchestrates the execution of a list of [Step]s based on a given plan.
+ *
+ * Each step is executed in order.
+ * Execution stops on:
+ * - failure (`Outcome.FAIL`)
+ * - friction required (`Outcome.FRICTION_REQUIRED`)
+ * - time budget exceeded
+ *
+ * @param C The context type shared across all steps.
+ * @param planBuilder A lambda that builds the list of steps to execute, based on the context.
+ * @param timeBufferMs Minimum buffer (ms) required before starting the next step.
+ */
 class StepExecutionEngine<C : ExecutionContext>(
     private val planBuilder: (C) -> List<Step<C>>,
     private val timeBufferMs: Long = 200,
 ) {
+    /**
+     * Runs the execution plan for the given [context].
+     *
+     * @return A final [ExecutionDecision] representing the outcome.
+     */
     suspend fun run(context: C): ExecutionDecision {
         val plan = planBuilder(context)
 

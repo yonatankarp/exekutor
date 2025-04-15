@@ -1,6 +1,7 @@
 plugins {
     id("exekutor.code-metrics")
     alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.dokka)
 }
 
 kotlin {
@@ -33,4 +34,12 @@ val tasksDependencies = mapOf(
 
 tasksDependencies.forEach { (taskName, dependencies) ->
     tasks.findByName(taskName)?.dependsOn(dependencies)
+}
+
+tasks.dokkaHtml {
+    outputDirectory.set(layout.buildDirectory.get().asFile.resolve("dokka"))
+    dokkaSourceSets.configureEach {
+        reportUndocumented.set(true)
+        skipDeprecated.set(true)
+    }
 }
