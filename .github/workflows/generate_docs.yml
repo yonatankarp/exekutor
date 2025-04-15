@@ -1,21 +1,20 @@
-name: Generate and Publish Documentation
+name: 📚 Publish versioned Dokka docs to `docs` branch
 
 on:
   push:
     branches: [main]
+    tags:
+      - 'v*.*.*'
 
-concurrency:
-  group: ${{ github.workflow }}
-  cancel-in-progress: false
+permissions:
+  contents: write
 
 jobs:
-  generate_docs:
+  publish_docs:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -26,21 +25,47 @@ jobs:
           distribution: temurin
           java-version: 21
 
+      - name: Determine version
+        id: version
+        run: |
+          TAG=$(git describe --tags --exact-match 2>/dev/null || echo "")
+          if [[ "$TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Detected tag: $TAG"
+            echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          else
+            echo "No semver tag found."
+            echo "tag=latest" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Generate Dokka documentation
         run: |
           chmod +x ./gradlew
           ./gradlew :exekutor-core:dokkaHtml
 
-      - name: Copy generated docs to top-level /docs folder
+      - name: Prepare versioned docs
         run: |
-          rm -rf docs
-          mkdir -p docs
-          cp -r exekutor-core/build/dokka/* docs/
+          VERSION=${{ steps.version.outputs.tag }}
+          mkdir -p out-docs/$VERSION
+          cp -r exekutor-core/build/dokka/* out-docs/$VERSION
 
-      - name: Commit and push updated docs
+          # If this is a version tag, update latest too
+          if [[ "$VERSION" != "latest" ]]; then
+            mkdir -p out-docs/latest
+            cp -r exekutor-core/build/dokka/* out-docs/latest
+          fi
+
+      - name: Push docs to `docs` branch
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs
-          git diff --quiet --cached || git commit -m "📚 Update Dokka documentation"
-          git push origin HEAD:main
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          git fetch origin docs || true
+          git switch --create docs || git checkout docs
+
+          rm -rf ${{ steps.version.outputs.tag }} latest
+          cp -r out-docs/* .
+
+          touch .nojekyll
+          git add .
+          git commit -m "📚 Publish docs for ${{ steps.version.outputs.tag }}" || echo "No changes"
+          git push --force origin docs
