@@ -33,14 +33,11 @@ jobs:
           rm -rf docs
           mkdir -p docs
           cp -r exekutor-core/build/dokka/* docs/
+
       - name: Push to `docs` branch (GitHub Pages)
         run: |
           git fetch origin docs || true
           git switch --create docs || git checkout docs
-
-          rm -rf *
-          cp -r docs/* .
-          touch .nojekyll
 
           git add .
           git commit -m "📚 Update GitHub Pages documentation" || echo "No changes"
