@@ -1,8 +1,12 @@
-name: Publish Latest Dokka Docs
+name: Documentation Generation
 
 on:
-  push:
-    branches: [main]
+  pull_request:
+    types: [ opened, synchronize, reopened, ready_for_review ]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.job }}-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: write
@@ -10,7 +14,7 @@ permissions:
 jobs:
   publish_docs:
     runs-on: ubuntu-latest
-
+    if: github.event.pull_request.head.repo.full_name == github.repository
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -23,22 +27,19 @@ jobs:
           distribution: temurin
           java-version: 21
 
-      - name: Generate Dokka
-        run: |
-          chmod +x ./gradlew
-          ./gradlew :exekutor-core:dokkaHtml
+      - name: Generate Dokka docs
+        run: ./gradlew :exekutor-core:dokkaHtml
 
-      - name: Copy generated docs to branch folder
+      - name: Copy docs to top-level folder
         run: |
           rm -rf docs
           mkdir -p docs
           cp -r exekutor-core/build/dokka/* docs/
 
-      - name: Push to `docs` branch (GitHub Pages)
+      - name: Commit and push documentation
         run: |
-          git fetch origin docs || true
-          git switch --create docs || git checkout docs
-
-          git add .
-          git commit -m "📚 Update GitHub Pages documentation" || echo "No changes"
-          git push --force origin docs
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs
+          git diff --quiet --cached || git commit -m "📚 Update Dokka documentation"
+          git push origin HEAD:refs/heads/${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}
