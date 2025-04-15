@@ -1,0 +1,26 @@
+name: Publish package to GitHub Packages
+on:
+  release:
+    types: [ published ]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Build Artifact
+        run: ./gradlew :exekutor-core:assemble
+
+      - name: Publish Artifact to GitHub Packages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: ./gradlew :exekutor-core:publish -Pversion=${{ github.event.release.tag_name }}
