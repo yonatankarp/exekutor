@@ -34,7 +34,7 @@ jobs:
         run: |
           rm -rf docs
           mkdir -p docs
-          cp -r exekutor-core/build/dokka/* docs/
+          cp -r exekutor-core/build/dokka/html/* docs/
 
       - name: Commit and push documentation
         run: |
