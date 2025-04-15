@@ -1,10 +1,8 @@
-name: 📚 Publish versioned Dokka docs to `docs` branch
+name: Publish Latest Dokka Docs
 
 on:
   push:
     branches: [main]
-    tags:
-      - 'v*.*.*'
 
 permissions:
   contents: write
@@ -25,47 +23,25 @@ jobs:
           distribution: temurin
           java-version: 21
 
-      - name: Determine version
-        id: version
-        run: |
-          TAG=$(git describe --tags --exact-match 2>/dev/null || echo "")
-          if [[ "$TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-            echo "Detected tag: $TAG"
-            echo "tag=$TAG" >> "$GITHUB_OUTPUT"
-          else
-            echo "No semver tag found."
-            echo "tag=latest" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Generate Dokka documentation
+      - name: Generate Dokka
         run: |
           chmod +x ./gradlew
           ./gradlew :exekutor-core:dokkaHtml
 
-      - name: Prepare versioned docs
+      - name: Copy generated docs to branch folder
         run: |
-          VERSION=${{ steps.version.outputs.tag }}
-          mkdir -p out-docs/$VERSION
-          cp -r exekutor-core/build/dokka/* out-docs/$VERSION
-
-          # If this is a version tag, update latest too
-          if [[ "$VERSION" != "latest" ]]; then
-            mkdir -p out-docs/latest
-            cp -r exekutor-core/build/dokka/* out-docs/latest
-          fi
-
-      - name: Push docs to `docs` branch
+          rm -rf docs
+          mkdir -p docs
+          cp -r exekutor-core/build/dokka/* docs/
+      - name: Push to `docs` branch (GitHub Pages)
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
           git fetch origin docs || true
           git switch --create docs || git checkout docs
 
-          rm -rf ${{ steps.version.outputs.tag }} latest
-          cp -r out-docs/* .
-
+          rm -rf *
+          cp -r docs/* .
           touch .nojekyll
+
           git add .
-          git commit -m "📚 Publish docs for ${{ steps.version.outputs.tag }}" || echo "No changes"
+          git commit -m "📚 Update GitHub Pages documentation" || echo "No changes"
           git push --force origin docs
