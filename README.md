@@ -1,5 +1,7 @@
 # 🧠 Exekutor
 
+<img src="logo.png" height="200" alt="exekutor logo" style="float: none; ">
+
 A lightweight, pluggable Kotlin engine for executing complex, interruptible
 workflows — built with time budgets, fail-fast execution, and simple
 extensibility in mind.
