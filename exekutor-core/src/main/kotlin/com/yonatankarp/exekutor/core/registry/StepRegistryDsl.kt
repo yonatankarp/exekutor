@@ -1,7 +1,7 @@
 package com.yonatankarp.exekutor.core.registry
 
-import com.yonatankarp.exekutor.core.api.ExecutionContext
-import com.yonatankarp.exekutor.core.api.Step
+import com.yonatankarp.exekutor.api.ExecutionContext
+import com.yonatankarp.exekutor.api.Step
 
 /**
  * A DSL for registering [Step]s in a declarative way.

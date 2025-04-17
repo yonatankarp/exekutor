@@ -9,6 +9,7 @@ dependencies {
 
     runtimeOnly(libs.slf4j.sample)
 
+    testImplementation(kotlin("test"))
     testImplementation(libs.bundles.test.all)
 }
 

@@ -1,8 +1,8 @@
 package com.yonatankarp.exekutor.sample
 
-import com.yonatankarp.exekutor.core.api.Outcome
-import com.yonatankarp.exekutor.core.api.StepResult
-import com.yonatankarp.exekutor.core.base.AutoRegisteredStep
+import com.yonatankarp.exekutor.api.AutoRegisteredStep
+import com.yonatankarp.exekutor.api.Outcome
+import com.yonatankarp.exekutor.api.StepResult
 import io.github.oshai.kotlinlogging.KotlinLogging
 
 class CreditCheck : AutoRegisteredStep<RiskContext>() {

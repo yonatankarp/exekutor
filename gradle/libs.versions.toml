@@ -21,7 +21,6 @@ slf4j_sample = { module = "org.slf4j:slf4j-simple", version.ref = "slf4j" }
 
 # Testing
 kotest_assertions = { module = "io.kotest:kotest-assertions-core", version.ref = "kotest" }
-kotest_core = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
 kotlinx_coroutines_test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
 
 [plugins]
@@ -40,6 +39,5 @@ kotlin_all = [
 
 test_all = [
     "kotest_assertions",
-    "kotest_core",
     "kotlinx_coroutines_test",
 ]
