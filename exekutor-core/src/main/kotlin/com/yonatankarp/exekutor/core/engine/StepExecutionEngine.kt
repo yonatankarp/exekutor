@@ -1,10 +1,10 @@
 package com.yonatankarp.exekutor.core.engine
 
-import com.yonatankarp.exekutor.core.api.ExecutionContext
-import com.yonatankarp.exekutor.core.api.ExecutionDecision
-import com.yonatankarp.exekutor.core.api.Outcome
-import com.yonatankarp.exekutor.core.api.Step
-import com.yonatankarp.exekutor.core.api.StepResult
+import com.yonatankarp.exekutor.api.ExecutionContext
+import com.yonatankarp.exekutor.api.ExecutionDecision
+import com.yonatankarp.exekutor.api.Outcome
+import com.yonatankarp.exekutor.api.Step
+import com.yonatankarp.exekutor.api.StepResult
 import kotlinx.coroutines.TimeoutCancellationException
 import kotlinx.coroutines.withTimeout
 
@@ -33,6 +33,8 @@ class StepExecutionEngine<C : ExecutionContext>(
     suspend fun run(context: C): ExecutionDecision {
         val plan = planBuilder(context)
 
+        require(plan.isNotEmpty()) { "Execution plan must contain at least one step" }
+
         for (step in plan) {
             if (shouldFailDueToTime(context)) {
                 return ExecutionDecision.Fail("Time budget exceeded before step ${step.name}")
@@ -48,20 +50,24 @@ class StepExecutionEngine<C : ExecutionContext>(
         return ExecutionDecision.Success
     }
 
-    private fun shouldFailDueToTime(context: C): Boolean = context.remainingTime() <= timeBufferMs
+    private fun shouldFailDueToTime(context: C): Boolean = context.remainingTime()?.let { it <= timeBufferMs } ?: false
 
     private suspend fun runStepSafely(
         step: Step<C>,
         context: C,
     ): StepResult =
         try {
-            withTimeout(context.remainingTime()) {
+            val timeout = context.remainingTime() ?: Long.MAX_VALUE
+            withTimeout(timeout) {
                 step.execute(context)
             }
         } catch (e: TimeoutCancellationException) {
             StepResult(Outcome.FAIL, "Step ${step.name} timed out")
         } catch (e: Exception) {
-            StepResult(Outcome.FAIL, "Step ${step.name} threw exception: ${e.message}")
+            StepResult(
+                Outcome.FAIL,
+                "Step ${step.name} threw exception: ${e.message}",
+            )
         }
 
     private fun resolveDecision(

@@ -1,47 +1,48 @@
 $dokka.format:html-v1
 $dokka.linkExtension:html
-$dokka.location:com.yonatankarp.exekutor.core.api////PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.api/index.html
-$dokka.location:com.yonatankarp.exekutor.core.api/ExecutionContext///PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.api/-execution-context/index.html
-$dokka.location:com.yonatankarp.exekutor.core.api/ExecutionContext/remainingTime/#/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.api/-execution-context/remaining-time.html
-$dokka.location:com.yonatankarp.exekutor.core.api/ExecutionContext/results/#/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.api/-execution-context/results.html
-$dokka.location:com.yonatankarp.exekutor.core.api/ExecutionContext/timeBudgetMs/#/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.api/-execution-context/time-budget-ms.html
-$dokka.location:com.yonatankarp.exekutor.core.api/ExecutionDecision.Fail///PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.api/-execution-decision/-fail/index.html
-$dokka.location:com.yonatankarp.exekutor.core.api/ExecutionDecision.Fail/Fail/#kotlin.String/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.api/-execution-decision/-fail/-fail.html
-$dokka.location:com.yonatankarp.exekutor.core.api/ExecutionDecision.Fail/reason/#/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.api/-execution-decision/-fail/reason.html
-$dokka.location:com.yonatankarp.exekutor.core.api/ExecutionDecision.Friction///PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.api/-execution-decision/-friction/index.html
-$dokka.location:com.yonatankarp.exekutor.core.api/ExecutionDecision.Friction/Friction/#kotlin.String#kotlin.Any?/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.api/-execution-decision/-friction/-friction.html
-$dokka.location:com.yonatankarp.exekutor.core.api/ExecutionDecision.Friction/data/#/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.api/-execution-decision/-friction/data.html
-$dokka.location:com.yonatankarp.exekutor.core.api/ExecutionDecision.Friction/reason/#/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.api/-execution-decision/-friction/reason.html
-$dokka.location:com.yonatankarp.exekutor.core.api/ExecutionDecision.Success///PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.api/-execution-decision/-success/index.html
-$dokka.location:com.yonatankarp.exekutor.core.api/ExecutionDecision///PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.api/-execution-decision/index.html
-$dokka.location:com.yonatankarp.exekutor.core.api/Outcome.FAIL///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}exekutor-core/com.yonatankarp.exekutor.core.api/-outcome/-f-a-i-l/index.html
-$dokka.location:com.yonatankarp.exekutor.core.api/Outcome.FRICTION_REQUIRED///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}exekutor-core/com.yonatankarp.exekutor.core.api/-outcome/-f-r-i-c-t-i-o-n_-r-e-q-u-i-r-e-d/index.html
-$dokka.location:com.yonatankarp.exekutor.core.api/Outcome.PASS///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}exekutor-core/com.yonatankarp.exekutor.core.api/-outcome/-p-a-s-s/index.html
-$dokka.location:com.yonatankarp.exekutor.core.api/Outcome///PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.api/-outcome/index.html
-$dokka.location:com.yonatankarp.exekutor.core.api/Outcome/entries/#/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.api/-outcome/entries.html
-$dokka.location:com.yonatankarp.exekutor.core.api/Outcome/valueOf/#kotlin.String/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.api/-outcome/value-of.html
-$dokka.location:com.yonatankarp.exekutor.core.api/Outcome/values/#/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.api/-outcome/values.html
-$dokka.location:com.yonatankarp.exekutor.core.api/Step///PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.api/-step/index.html
-$dokka.location:com.yonatankarp.exekutor.core.api/Step/execute/#TypeParam(bounds=[com.yonatankarp.exekutor.core.api.ExecutionContext])/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.api/-step/execute.html
-$dokka.location:com.yonatankarp.exekutor.core.api/Step/name/#/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.api/-step/name.html
-$dokka.location:com.yonatankarp.exekutor.core.api/StepResult///PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.api/-step-result/index.html
-$dokka.location:com.yonatankarp.exekutor.core.api/StepResult/StepResult/#com.yonatankarp.exekutor.core.api.Outcome#kotlin.Any?/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.api/-step-result/-step-result.html
-$dokka.location:com.yonatankarp.exekutor.core.api/StepResult/details/#/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.api/-step-result/details.html
-$dokka.location:com.yonatankarp.exekutor.core.api/StepResult/outcome/#/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.api/-step-result/outcome.html
-$dokka.location:com.yonatankarp.exekutor.core.base////PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.base/index.html
-$dokka.location:com.yonatankarp.exekutor.core.base/AutoRegisteredStep///PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.base/-auto-registered-step/index.html
-$dokka.location:com.yonatankarp.exekutor.core.base/AutoRegisteredStep/AutoRegisteredStep/#/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.base/-auto-registered-step/-auto-registered-step.html
+$dokka.location:com.yonatankarp.exekutor.api////PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.api/index.html
+$dokka.location:com.yonatankarp.exekutor.api/AutoRegisteredStep///PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.api/-auto-registered-step/index.html
+$dokka.location:com.yonatankarp.exekutor.api/AutoRegisteredStep/AutoRegisteredStep/#/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.api/-auto-registered-step/-auto-registered-step.html
+$dokka.location:com.yonatankarp.exekutor.api/ExecutionContext///PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.api/-execution-context/index.html
+$dokka.location:com.yonatankarp.exekutor.api/ExecutionContext/remainingTime/#/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.api/-execution-context/remaining-time.html
+$dokka.location:com.yonatankarp.exekutor.api/ExecutionContext/results/#/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.api/-execution-context/results.html
+$dokka.location:com.yonatankarp.exekutor.api/ExecutionContext/timeBudgetMs/#/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.api/-execution-context/time-budget-ms.html
+$dokka.location:com.yonatankarp.exekutor.api/ExecutionDecision.Fail///PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.api/-execution-decision/-fail/index.html
+$dokka.location:com.yonatankarp.exekutor.api/ExecutionDecision.Fail/Fail/#kotlin.String/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.api/-execution-decision/-fail/-fail.html
+$dokka.location:com.yonatankarp.exekutor.api/ExecutionDecision.Fail/reason/#/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.api/-execution-decision/-fail/reason.html
+$dokka.location:com.yonatankarp.exekutor.api/ExecutionDecision.Friction///PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.api/-execution-decision/-friction/index.html
+$dokka.location:com.yonatankarp.exekutor.api/ExecutionDecision.Friction/Friction/#kotlin.String#kotlin.Any?/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.api/-execution-decision/-friction/-friction.html
+$dokka.location:com.yonatankarp.exekutor.api/ExecutionDecision.Friction/data/#/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.api/-execution-decision/-friction/data.html
+$dokka.location:com.yonatankarp.exekutor.api/ExecutionDecision.Friction/reason/#/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.api/-execution-decision/-friction/reason.html
+$dokka.location:com.yonatankarp.exekutor.api/ExecutionDecision.Success///PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.api/-execution-decision/-success/index.html
+$dokka.location:com.yonatankarp.exekutor.api/ExecutionDecision///PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.api/-execution-decision/index.html
+$dokka.location:com.yonatankarp.exekutor.api/Outcome.FAIL///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}exekutor-core/com.yonatankarp.exekutor.api/-outcome/-f-a-i-l/index.html
+$dokka.location:com.yonatankarp.exekutor.api/Outcome.FRICTION_REQUIRED///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}exekutor-core/com.yonatankarp.exekutor.api/-outcome/-f-r-i-c-t-i-o-n_-r-e-q-u-i-r-e-d/index.html
+$dokka.location:com.yonatankarp.exekutor.api/Outcome.PASS///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}exekutor-core/com.yonatankarp.exekutor.api/-outcome/-p-a-s-s/index.html
+$dokka.location:com.yonatankarp.exekutor.api/Outcome///PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.api/-outcome/index.html
+$dokka.location:com.yonatankarp.exekutor.api/Outcome/entries/#/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.api/-outcome/entries.html
+$dokka.location:com.yonatankarp.exekutor.api/Outcome/valueOf/#kotlin.String/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.api/-outcome/value-of.html
+$dokka.location:com.yonatankarp.exekutor.api/Outcome/values/#/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.api/-outcome/values.html
+$dokka.location:com.yonatankarp.exekutor.api/Step///PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.api/-step/index.html
+$dokka.location:com.yonatankarp.exekutor.api/Step/execute/#TypeParam(bounds=[com.yonatankarp.exekutor.api.ExecutionContext])/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.api/-step/execute.html
+$dokka.location:com.yonatankarp.exekutor.api/Step/name/#/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.api/-step/name.html
+$dokka.location:com.yonatankarp.exekutor.api/StepResult///PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.api/-step-result/index.html
+$dokka.location:com.yonatankarp.exekutor.api/StepResult/StepResult/#com.yonatankarp.exekutor.api.Outcome#kotlin.Any?/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.api/-step-result/-step-result.html
+$dokka.location:com.yonatankarp.exekutor.api/StepResult/details/#/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.api/-step-result/details.html
+$dokka.location:com.yonatankarp.exekutor.api/StepResult/outcome/#/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.api/-step-result/outcome.html
 $dokka.location:com.yonatankarp.exekutor.core.engine////PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.engine/index.html
 $dokka.location:com.yonatankarp.exekutor.core.engine/StepExecutionEngine///PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.engine/-step-execution-engine/index.html
-$dokka.location:com.yonatankarp.exekutor.core.engine/StepExecutionEngine/StepExecutionEngine/#kotlin.Function1[TypeParam(bounds=[com.yonatankarp.exekutor.core.api.ExecutionContext]),kotlin.collections.List[com.yonatankarp.exekutor.core.api.Step[TypeParam(bounds=[com.yonatankarp.exekutor.core.api.ExecutionContext])]]]#kotlin.Long/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.engine/-step-execution-engine/-step-execution-engine.html
-$dokka.location:com.yonatankarp.exekutor.core.engine/StepExecutionEngine/run/#TypeParam(bounds=[com.yonatankarp.exekutor.core.api.ExecutionContext])/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.engine/-step-execution-engine/run.html
+$dokka.location:com.yonatankarp.exekutor.core.engine/StepExecutionEngine/StepExecutionEngine/#kotlin.Function1[TypeParam(bounds=[com.yonatankarp.exekutor.api.ExecutionContext]),kotlin.collections.List[com.yonatankarp.exekutor.api.Step[TypeParam(bounds=[com.yonatankarp.exekutor.api.ExecutionContext])]]]#kotlin.Long/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.engine/-step-execution-engine/-step-execution-engine.html
+$dokka.location:com.yonatankarp.exekutor.core.engine/StepExecutionEngine/run/#TypeParam(bounds=[com.yonatankarp.exekutor.api.ExecutionContext])/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.engine/-step-execution-engine/run.html
 $dokka.location:com.yonatankarp.exekutor.core.registry////PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.registry/index.html
 $dokka.location:com.yonatankarp.exekutor.core.registry//defaultPlanBuilder/#/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.registry/default-plan-builder.html
 $dokka.location:com.yonatankarp.exekutor.core.registry//registerSteps/#kotlin.Function1[com.yonatankarp.exekutor.core.registry.StepRegistryDsl,kotlin.Unit]/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.registry/register-steps.html
+$dokka.location:com.yonatankarp.exekutor.core.registry/StepRegistry///PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.registry/-step-registry/index.html
+$dokka.location:com.yonatankarp.exekutor.core.registry/StepRegistry/all/#/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.registry/-step-registry/all.html
+$dokka.location:com.yonatankarp.exekutor.core.registry/StepRegistry/register/#com.yonatankarp.exekutor.api.Step[com.yonatankarp.exekutor.api.ExecutionContext]/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.registry/-step-registry/register.html
 $dokka.location:com.yonatankarp.exekutor.core.registry/StepRegistryDsl///PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.registry/-step-registry-dsl/index.html
 $dokka.location:com.yonatankarp.exekutor.core.registry/StepRegistryDsl/StepRegistryDsl/#/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.registry/-step-registry-dsl/-step-registry-dsl.html
-$dokka.location:com.yonatankarp.exekutor.core.registry/StepRegistryDsl/step/#kotlin.Function0[com.yonatankarp.exekutor.core.api.Step[TypeParam(bounds=[com.yonatankarp.exekutor.core.api.ExecutionContext])]]/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.registry/-step-registry-dsl/step.html
-com.yonatankarp.exekutor.core.api
-com.yonatankarp.exekutor.core.base
+$dokka.location:com.yonatankarp.exekutor.core.registry/StepRegistryDsl/step/#kotlin.Function0[com.yonatankarp.exekutor.api.Step[TypeParam(bounds=[com.yonatankarp.exekutor.api.ExecutionContext])]]/PointingToDeclaration/exekutor-core/com.yonatankarp.exekutor.core.registry/-step-registry-dsl/step.html
+com.yonatankarp.exekutor.api
 com.yonatankarp.exekutor.core.engine
 com.yonatankarp.exekutor.core.registry

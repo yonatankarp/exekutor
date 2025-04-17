@@ -1,7 +1,7 @@
 package com.yonatankarp.exekutor.core.registry
 
-import com.yonatankarp.exekutor.core.api.ExecutionContext
-import com.yonatankarp.exekutor.core.api.Step
+import com.yonatankarp.exekutor.api.ExecutionContext
+import com.yonatankarp.exekutor.api.Step
 import io.github.oshai.kotlinlogging.KotlinLogging
 
 /**
@@ -9,7 +9,7 @@ import io.github.oshai.kotlinlogging.KotlinLogging
  *
  * Steps are stored in a mutable list and can be resolved by plan builders.
  */
-internal object StepRegistry {
+object StepRegistry {
     private val steps = mutableListOf<Step<out ExecutionContext>>()
     private val logger = KotlinLogging.logger {}
 
