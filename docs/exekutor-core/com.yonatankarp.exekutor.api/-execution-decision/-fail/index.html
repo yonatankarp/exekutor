@@ -2,9 +2,9 @@
 <html class="no-js">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <title>StepRegistryDsl</title>
-    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
-    <script>var pathToRoot = "../../../";</script>
+    <title>Fail</title>
+    <link href="../../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../../";</script>
     <script>document.documentElement.classList.replace("no-js","js");</script>
     <script>const storage = localStorage.getItem("dokka-dark-mode")
     if (storage == null) {
@@ -20,25 +20,25 @@
     }
     </script>
 <script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
-<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
-<link href="../../../styles/style.css" rel="Stylesheet">
-<link href="../../../styles/main.css" rel="Stylesheet">
-<link href="../../../styles/prism.css" rel="Stylesheet">
-<link href="../../../styles/logo-styles.css" rel="Stylesheet">
-<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
-<link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
-<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
-<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
-<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
-<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
-<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
-<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer="defer"></script>
-<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+<script type="text/javascript" src="../../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../../styles/style.css" rel="Stylesheet">
+<link href="../../../../styles/main.css" rel="Stylesheet">
+<link href="../../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<link href="../../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../../ui-kit/ui-kit.min.js" defer="defer"></script>
+<script type="text/javascript" src="../../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
 </head>
 <body>
     <div class="root">
     <nav class="navigation theme-dark" id="navigation-wrapper">
-            <a class="library-name--link" href="../../../index.html">
+            <a class="library-name--link" href="../../../../index.html">
                     exekutor-core
             </a>
         <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
@@ -104,47 +104,47 @@
                 </div>
             </div>
             <div id="main">
-<div class="main-content" data-page-type="classlike" id="content" pageIds="exekutor-core::com.yonatankarp.exekutor.core.registry/StepRegistryDsl///PointingToDeclaration//2080982079">
-  <div class="breadcrumbs"><a href="../../../index.html">exekutor-core</a><span class="delimiter">/</span><a href="../index.html">com.yonatankarp.exekutor.core.registry</a><span class="delimiter">/</span><span class="current">StepRegistryDsl</span></div>
+<div class="main-content" data-page-type="classlike" id="content" pageIds="exekutor-core::com.yonatankarp.exekutor.api/ExecutionDecision.Fail///PointingToDeclaration//2080982079">
+  <div class="breadcrumbs"><a href="../../../../index.html">exekutor-core</a><span class="delimiter">/</span><a href="../../index.html">com.yonatankarp.exekutor.api</a><span class="delimiter">/</span><a href="../index.html">ExecutionDecision</a><span class="delimiter">/</span><span class="current">Fail</span></div>
   <div class="cover ">
-    <h1 class="cover"><span>Step</span><wbr></wbr><span>Registry</span><wbr></wbr><span><span>Dsl</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":exekutor-core/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">StepRegistryDsl</a></div><p class="paragraph">A DSL for registering <a href="../../com.yonatankarp.exekutor.api/-step/index.html">Step</a>s in a declarative way.</p><p class="paragraph">Example usage:</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">registerSteps {<br>    step { FraudCheck() }<br>    step { CreditCheck() }<br>}</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+    <h1 class="cover"><span><span>Fail</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":exekutor-core/main"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="index.html">Fail</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>reason<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span> : <a href="../index.html">ExecutionDecision</a></div><p class="paragraph">Indicates that execution failed due to an unrecoverable condition.</p><h4 class="">Parameters</h4><div class="table"><div class="table-row" data-filterable-current=":exekutor-core/main" data-filterable-set=":exekutor-core/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>reason</span></span></u></div></span></div><div><div class="title"><p class="paragraph">Human-readable description of the failure.</p></div></div></div></div></div></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
     <div class="tabs-section-body">
       <div data-togglable="CONSTRUCTOR">
         <h2 class="">Constructors</h2>
-        <div class="table"><a data-name="1769222891%2FConstructors%2F2080982079" anchor-label="StepRegistryDsl" id="1769222891%2FConstructors%2F2080982079" data-filterable-set=":exekutor-core/main"></a>
+        <div class="table"><a data-name="1247928579%2FConstructors%2F2080982079" anchor-label="Fail" id="1247928579%2FConstructors%2F2080982079" data-filterable-set=":exekutor-core/main"></a>
           <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current=":exekutor-core/main" data-filterable-set=":exekutor-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
-                  <div><a href="-step-registry-dsl.html"><span>Step</span><wbr></wbr><span>Registry</span><wbr></wbr><span><span>Dsl</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1769222891%2FConstructors%2F2080982079"></span>
+                  <div><a href="-fail.html"><span><span>Fail</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1247928579%2FConstructors%2F2080982079"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":exekutor-core/main"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":exekutor-core/main"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">reason<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div></div></div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div data-togglable="FUNCTION">
-        <h2 class="">Functions</h2>
-        <div class="table"><a data-name="-1021205341%2FFunctions%2F2080982079" anchor-label="step" id="-1021205341%2FFunctions%2F2080982079" data-filterable-set=":exekutor-core/main"></a>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="-164931365%2FProperties%2F2080982079" anchor-label="reason" id="-164931365%2FProperties%2F2080982079" data-filterable-set=":exekutor-core/main"></a>
           <div class="table-row" data-filterable-current=":exekutor-core/main" data-filterable-set=":exekutor-core/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
-                  <div><a href="step.html"><span><span>step</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1021205341%2FFunctions%2F2080982079"></span>
+                  <div><a href="reason.html"><span><span>reason</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-164931365%2FProperties%2F2080982079"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":exekutor-core/main"><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="step.html">C</a><span class="token operator"> : </span><a href="../../com.yonatankarp.exekutor.api/-execution-context/index.html">ExecutionContext</a><span class="token operator">&gt; </span><a href="step.html"><span class="token function">step</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">factory<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="../../com.yonatankarp.exekutor.api/-step/index.html">Step</a><span class="token operator">&lt;</span><a href="step.html">C</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Registers a step by providing a factory lambda.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":exekutor-core/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="reason.html">reason</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div></div></div>
                 </div>
               </div>
             </div>

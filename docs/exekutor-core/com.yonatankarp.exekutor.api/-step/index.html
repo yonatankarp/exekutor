@@ -2,7 +2,7 @@
 <html class="no-js">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <title>run</title>
+    <title>Step</title>
     <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
     <script>var pathToRoot = "../../../";</script>
     <script>document.documentElement.classList.replace("no-js","js");</script>
@@ -104,12 +104,55 @@
                 </div>
             </div>
             <div id="main">
-<div class="main-content" data-page-type="member" id="content" pageIds="exekutor-core::com.yonatankarp.exekutor.core.engine/StepExecutionEngine/run/#TypeParam(bounds=[com.yonatankarp.exekutor.api.ExecutionContext])/PointingToDeclaration//2080982079">
-  <div class="breadcrumbs"><a href="../../../index.html">exekutor-core</a><span class="delimiter">/</span><a href="../index.html">com.yonatankarp.exekutor.core.engine</a><span class="delimiter">/</span><a href="index.html">StepExecutionEngine</a><span class="delimiter">/</span><span class="current">run</span></div>
+<div class="main-content" data-page-type="classlike" id="content" pageIds="exekutor-core::com.yonatankarp.exekutor.api/Step///PointingToDeclaration//2080982079">
+  <div class="breadcrumbs"><a href="../../../index.html">exekutor-core</a><span class="delimiter">/</span><a href="../index.html">com.yonatankarp.exekutor.api</a><span class="delimiter">/</span><span class="current">Step</span></div>
   <div class="cover ">
-    <h1 class="cover"><span><span>run</span></span></h1>
+    <h1 class="cover"><span><span>Step</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":exekutor-core/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="index.html">Step</a><span class="token operator">&lt;</span><a href="index.html">C</a><span class="token operator"> : </span><a href="../-execution-context/index.html">ExecutionContext</a><span class="token operator">&gt;</span></div><p class="paragraph">Represents a single step in an execution plan.</p><h4 class="">Parameters</h4><div class="table"><div class="table-row" data-filterable-current=":exekutor-core/main" data-filterable-set=":exekutor-core/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>C</span></span></u></div></span></div><div><div class="title"><p class="paragraph">The type of <a href="../-execution-context/index.html">ExecutionContext</a> used to share state and time tracking.</p></div></div></div></div></div><h4 class="">Inheritors</h4><div class="table"><div class="table-row" data-filterable-current=":exekutor-core/main" data-filterable-set=":exekutor-core/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-auto-registered-step/index.html">AutoRegisteredStep</a></div></span></div><div></div></div></div></div></div></div>
   </div>
-  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":exekutor-core/main"><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="run.html"><span class="token function">run</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="index.html">C</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.yonatankarp.exekutor.api/-execution-decision/index.html">ExecutionDecision</a></div><p class="paragraph">Runs the execution plan for the given <a href="run.html">context</a>.</p><span class="kdoc-tag"><h4 class="">Return</h4><p class="paragraph">A final <a href="../../com.yonatankarp.exekutor.api/-execution-decision/index.html">ExecutionDecision</a> representing the outcome.</p></span></div></div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="-1821721304%2FProperties%2F2080982079" anchor-label="name" id="-1821721304%2FProperties%2F2080982079" data-filterable-set=":exekutor-core/main"></a>
+          <div class="table-row" data-filterable-current=":exekutor-core/main" data-filterable-set=":exekutor-core/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="name.html"><span><span>name</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1821721304%2FProperties%2F2080982079"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":exekutor-core/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="name.html">name</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">The unique name of the step. Used for debugging, logging, and result tracking.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="-2059764291%2FFunctions%2F2080982079" anchor-label="execute" id="-2059764291%2FFunctions%2F2080982079" data-filterable-set=":exekutor-core/main"></a>
+          <div class="table-row" data-filterable-current=":exekutor-core/main" data-filterable-set=":exekutor-core/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="execute.html"><span><span>execute</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2059764291%2FFunctions%2F2080982079"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":exekutor-core/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="execute.html"><span class="token function">execute</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="index.html">C</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-step-result/index.html">StepResult</a></div><div class="brief "><p class="paragraph">Executes the step logic using the given <a href="execute.html">context</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
     <div class="footer">
         <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
