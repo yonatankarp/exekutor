@@ -1,4 +1,4 @@
-package com.yonatankarp.exekutor.core.api
+package com.yonatankarp.exekutor.api
 
 /**
  * The outcome of a single step execution.

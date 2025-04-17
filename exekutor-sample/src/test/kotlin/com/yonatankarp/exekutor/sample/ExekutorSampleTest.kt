@@ -1,6 +1,6 @@
 package com.yonatankarp.exekutor.sample
 
-import com.yonatankarp.exekutor.core.api.ExecutionDecision
+import com.yonatankarp.exekutor.api.ExecutionDecision
 import com.yonatankarp.exekutor.core.engine.StepExecutionEngine
 import kotlinx.coroutines.test.runTest
 import org.junit.jupiter.api.Assertions.assertEquals

@@ -1,4 +1,4 @@
-package com.yonatankarp.exekutor.core.api
+package com.yonatankarp.exekutor.api
 
 /**
  * Defines the context shared across all steps during execution.
@@ -15,8 +15,9 @@ interface ExecutionContext {
      * Returns the remaining time available before the execution should time out.
      *
      * Implementations should calculate this relative to the initial time budget.
+     * If no time budget is remaining, this method should return `null`.
      */
-    fun remainingTime(): Long
+    fun remainingTime(): Long?
 
     /**
      * A mutable map of step names to their results.

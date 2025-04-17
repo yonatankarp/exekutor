@@ -1,4 +1,4 @@
-package com.yonatankarp.exekutor.core.api
+package com.yonatankarp.exekutor.api
 
 /**
  * Represents a single step in an execution plan.

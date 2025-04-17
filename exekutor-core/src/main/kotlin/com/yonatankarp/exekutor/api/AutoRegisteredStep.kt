@@ -1,7 +1,5 @@
-package com.yonatankarp.exekutor.core.base
+package com.yonatankarp.exekutor.api
 
-import com.yonatankarp.exekutor.core.api.ExecutionContext
-import com.yonatankarp.exekutor.core.api.Step
 import com.yonatankarp.exekutor.core.registry.StepRegistry
 
 /**

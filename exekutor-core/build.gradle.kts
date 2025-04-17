@@ -18,6 +18,9 @@ kotlin {
 
 dependencies {
     implementation(libs.bundles.kotlin.all)
+
+    testRuntimeOnly(libs.slf4j.sample)
+    testImplementation(kotlin("test"))
     testImplementation(libs.bundles.test.all) {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
     }
