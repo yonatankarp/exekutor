@@ -5,7 +5,7 @@ dokka = "2.0.0"
 jvmTarget = "21"
 kotest = "5.9.1"
 kotlin = "2.2.0"
-kotlinLoggingJvm = "7.0.7"
+kotlinLoggingJvm = "7.0.10"
 slf4j = "2.0.17"
 spotless = "7.2.1"
 
