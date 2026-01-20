@@ -3,7 +3,7 @@
 coroutines = "1.10.2"
 dokka = "2.1.0"
 jvmTarget = "21"
-kotest = "6.0.7"
+kotest = "6.1.0"
 kotlin = "2.3.0"
 kotlinLoggingJvm = "7.0.14"
 slf4j = "2.0.17"
