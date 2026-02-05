@@ -27,7 +27,7 @@ jobs:
       pull-requests: write
     uses: yonatankarp/github-actions/.github/workflows/dependabot-auto-merge.yml@v1
     secrets:
-      DEPENDABOT_MERGE_TOKEN: ${{ secrets.REVIEWER_GITHUB_TOKEN }}
+      GITHUB_PAT: ${{ secrets.REVIEWER_GITHUB_TOKEN }}
 
   linters:
     uses: yonatankarp/github-actions/.github/workflows/linters.yml@v1
