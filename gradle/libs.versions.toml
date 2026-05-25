@@ -6,7 +6,7 @@ jvmTarget = "21"
 kotest = "6.1.2"
 kotlin = "2.3.0"
 kotlinLoggingJvm = "8.0.01"
-slf4j = "2.0.17"
+slf4j = "2.0.18"
 spotless = "8.2.1"
 
 [libraries]
