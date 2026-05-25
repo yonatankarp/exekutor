@@ -1,6 +1,6 @@
 [versions]
 
-coroutines = "1.10.2"
+coroutines = "1.11.0"
 dokka = "2.1.0"
 jvmTarget = "21"
 kotest = "6.1.2"
