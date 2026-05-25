@@ -25,7 +25,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
-    uses: yonatankarp/github-actions/.github/workflows/dependabot-auto-merge.yml@v1
+    uses: yonatankarp/github-actions/.github/workflows/dependabot-auto-merge.yml@v2
     secrets:
       GITHUB_PAT: ${{ secrets.REVIEWER_GITHUB_TOKEN }}
 
