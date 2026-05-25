@@ -7,6 +7,6 @@ on:
 
 jobs:
   update-gradle-wrapper:
-    uses:  yonatankarp/github-actions/.github/workflows/update-gradle-wrapper.yml@v1
+    uses:  yonatankarp/github-actions/.github/workflows/update-gradle-wrapper.yml@v2
     secrets:
       GITHUB_PAT: ${{ secrets.REVIEWER_GITHUB_TOKEN }}
