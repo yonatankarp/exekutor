@@ -30,4 +30,4 @@ jobs:
       GITHUB_PAT: ${{ secrets.REVIEWER_GITHUB_TOKEN }}
 
   linters:
-    uses: yonatankarp/github-actions/.github/workflows/linters.yml@v1
+    uses: yonatankarp/github-actions/.github/workflows/linters.yml@v2
